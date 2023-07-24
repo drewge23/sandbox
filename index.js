@@ -140,8 +140,9 @@ function tmWidgetInit(widgetConfig) {
     let widgetElement = renderWidget(widgetConfig);
 
     initAmplitude(widgetConfig);
-    debugger
-    insertStyles();
+    document.addEventListener("DOMContentLoaded", function() {
+            insertStyles();
+        });
 
     if (widgetConfig.type === "ww-extended") {
 
