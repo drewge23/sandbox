@@ -126,13 +126,11 @@ function renderWidget(widgetConfig) {
 
 function insertStyles() {
     let headId = document.getElementsByTagName("head")[0];
-    console.log(headId)
     let link = document.createElement("link");
     link.type = "text/css";
     link.rel = "stylesheet";
     // link.href = "https://d3kzab8jj16n2f.cloudfront.net/v3/widget-style.css";
     link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.css";
-    console.dir(link)
     headId.appendChild(link);
 }
 
@@ -140,10 +138,8 @@ function tmWidgetInit(widgetConfig) {
     let widgetElement = renderWidget(widgetConfig);
 
     initAmplitude(widgetConfig);
-    document.addEventListener("DOMContentLoaded", function() {
-            insertStyles();
-        });
-
+    insertStyles();
+    
     if (widgetConfig.type === "ww-extended") {
 
         widgetElement.querySelector('.ww-icon').onmouseover = function () {
