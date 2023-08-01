@@ -130,7 +130,7 @@ function insertStyles() {
     link.type = "text/css";
     link.rel = "stylesheet";
     // link.href = "https://d3kzab8jj16n2f.cloudfront.net/v3/widget-style.css";
-    link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.v2.css";
+    link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.v3.css";
     // link.href = "https://raw.githubusercontent.com/drewge23/sandbox/main/styles.css";
     headId.appendChild(link);
 }
@@ -216,13 +216,13 @@ function initAmplitude(widgetConfig) {
 }
 
 function getStandardHtmlString(whatsappLink, call) {
-    let htmlString = `<div id='whatsapp-widget' className='ww-standard'>
-                <div className='ww-standard-text'>
+    let htmlString = `<div id='whatsapp-widget' class='ww-standard'>
+                <div class='ww-standard-text'>
                     <a href="${whatsappLink}" target='_blank'>
                         ${call}
                     </a>
                 </div>
-                <div className='ww-standard-icon'>
+                <div class='ww-standard-icon'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" view-box="0 0 48 48" fill="none">
                         <path
                             d="M23.8151 0C11.042 0 0.687174 10.4746 0.687174 23.3965C0.687174 29.8091 4.04401 35.5411 4.04401 35.5411L0 48L12.6732 43.9037C12.6732 43.9037 17.378 46.793 23.8162 46.793C36.5904 46.793 46.9452 36.3184 46.9452 23.3965C46.9441 10.4746 36.5893 0 23.8151 0ZM23.8151 43.0486C17.8687 43.0486 13.1079 39.7973 13.1079 39.7973L5.80256 42.2081L8.17254 35.0536C8.17254 35.0536 4.3865 29.7514 4.3865 23.3954C4.3865 12.5411 13.0848 3.74322 23.814 3.74322C34.5442 3.74322 43.2426 12.5422 43.2426 23.3954C43.2437 34.2497 34.5453 43.0486 23.8151 43.0486Z"
