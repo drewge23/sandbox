@@ -114,7 +114,7 @@ function renderWidget(widgetConfig) {
 
     let htmlString = widgetConfig.type === "ww-extended" ? getExtendedHtmlString(whatsappLinks, widgetConfig) : getStandardHtmlString(whatsappLinks[0], widgetConfig.call);
 
-    // widgetElement.id = "whatsapp-widget";
+    widgetElement.id = "whatsapp-widget-container";
     // widgetElement.classList.add(String(widgetConfig.size));
     // widgetElement.classList.add(String(widgetConfig.position));
     // widgetElement.classList.add(String(widgetConfig.type));
