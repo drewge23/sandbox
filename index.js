@@ -129,8 +129,8 @@ function insertStyles() {
     let link = document.createElement("link");
     link.type = "text/css";
     link.rel = "stylesheet";
-    link.href = "https://d3kzab8jj16n2f.cloudfront.net/v3/widget-style.css";
-    // link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.css";
+    // link.href = "https://d3kzab8jj16n2f.cloudfront.net/v3/widget-style.css";
+    link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.css";
     headId.appendChild(link);
 }
 
