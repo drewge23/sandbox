@@ -141,32 +141,32 @@ function tmWidgetInit(widgetConfig) {
     initAmplitude(widgetConfig);
     insertStyles();
     
-    // if (widgetConfig.type === "ww-extended") {
+    if (widgetConfig.type === "ww-extended") {
 
-    //     widgetElement.querySelector('.ww-icon').onmouseover = function () {
-    //         widgetElement.classList.add('widget-hovered')
-    //     }
-    //     widgetElement.querySelector('.ww-chat').onmouseover = function () {
-    //         widgetElement.classList.add('widget-chat-hovered')
-    //     }
-    //     widgetElement.querySelector('.ww-chat').onmouseleave = function () {
-    //         widgetElement.classList.remove('widget-chat-hovered')
-    //     }
-    //     widgetElement.onmouseleave = function () {
-    //         setTimeout(() => {
-    //             if (!widgetElement.classList.contains('widget-chat-hovered')) {
-    //                 widgetElement.classList.remove('widget-hovered')
-    //             }
-    //         }, 300);
-    //     }
-    //     widgetElement.querySelector('.ww-icon').onclick = function () {
-    //         widgetElement.classList.add('widget-clicked')
-    //     }
-    //     widgetElement.querySelector('.ww-close').onclick = function () {
-    //         widgetElement.classList.remove('widget-clicked')
-    //         widgetElement.classList.remove('widget-hovered')
-    //     }
-    // }
+        widgetElement.querySelector('.ww-icon').onmouseover = function () {
+            widgetElement.classList.add('widget-hovered')
+        }
+        widgetElement.querySelector('.ww-chat').onmouseover = function () {
+            widgetElement.classList.add('widget-chat-hovered')
+        }
+        widgetElement.querySelector('.ww-chat').onmouseleave = function () {
+            widgetElement.classList.remove('widget-chat-hovered')
+        }
+        widgetElement.onmouseleave = function () {
+            setTimeout(() => {
+                if (!widgetElement.classList.contains('widget-chat-hovered')) {
+                    widgetElement.classList.remove('widget-hovered')
+                }
+            }, 300);
+        }
+        widgetElement.querySelector('.ww-icon').onclick = function () {
+            widgetElement.classList.add('widget-clicked')
+        }
+        widgetElement.querySelector('.ww-close').onclick = function () {
+            widgetElement.classList.remove('widget-clicked')
+            widgetElement.classList.remove('widget-hovered')
+        }
+    }
 }
 
 function readCookie(name) {
