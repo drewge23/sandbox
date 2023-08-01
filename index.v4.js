@@ -216,7 +216,7 @@ function initAmplitude(widgetConfig) {
 }
 
 function getStandardHtmlString(whatsappLink, call) {
-    htmlString = `<div id='whatsapp-widget' className='ww-standard'>
+    let htmlString = `<div id='whatsapp-widget' className='ww-standard'>
                 <div className='ww-standard-text'>
                     <a href="${whatsappLink}" target='_blank'>
                         ${call}
@@ -237,7 +237,7 @@ function getStandardHtmlString(whatsappLink, call) {
 }
 
 function getExtendedHtmlString(whatsappLinks, config) {
-    htmlString = `<div id='whatsapp-widget-extended' class='ww-extended'>
+    let htmlString = `<div id='whatsapp-widget-extended' class='ww-extended'>
                 <div class='ww-extended-header'>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" view-box="0 0 48 48" fill="none">
