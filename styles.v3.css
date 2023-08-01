@@ -217,7 +217,7 @@
 .ww-extended-icon {
     animation: slide 3s ease-in;
 
-    position: relative;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     width: 70px;
