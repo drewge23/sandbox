@@ -98,6 +98,11 @@
     transition: 0.3s;
 }
 
+#whatsapp-widget-extended a {
+    color: black;
+    text-decoration: none;
+}
+    
 #whatsapp-widget-extended.ww-open {
     opacity: 1;
     transition: 0.3s;
