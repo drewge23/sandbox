@@ -263,7 +263,8 @@ function getExtendedHtmlString(whatsappLinks, config) {
                 <div class='ww-extended-body'>
                     <p>The team typically replies in a few minutes</p>
                     ${config.contacts.map((contact, index) => (
-                        `<div class='ww-extended-contact'>
+                        `<a target='_blank' href="${whatsappLinks[index]}">
+                        <div class='ww-extended-contact'>
                             <div>
                                 <p class='ww-extended-contact-name'>
                                     ${contact.name ? contact.name : contact.title}
@@ -283,7 +284,7 @@ function getExtendedHtmlString(whatsappLinks, config) {
                                         fill="#44C654"/>
                                 </svg>
                             </div>
-                        </div>`
+                        </div></a>`
                     )).join('')}
                     <div class='ww-extended-logo'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="94" height="16" view-box="0 0 94 16" fill="none">
