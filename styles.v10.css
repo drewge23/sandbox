@@ -17,7 +17,8 @@
 }
 
 #whatsapp-widget .ww-standard-text {
-    width: 188px;
+/*     width: 188px; */
+    padding: 0 30px;
     height: 62px;
     border-radius: 16px;
     background: #FFF;
