@@ -89,12 +89,11 @@
 })(window, document);
 
 function filterPhoneNumber(phone) {
-    return phone.split(" ").join("").split("+").join("")
+    return phone.split(" ").join("").split("+").join("").split("-").join("")
 }
 
 function validatePhoneLink(phone) {
-    phone = phone.split(" ").join("")
-    phone = phone.split("+").join("")
+    phone = filterPhoneNumber(phone)
     if (!phone.startsWith('+')) {
         phone = '+' + phone;
     }
