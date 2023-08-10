@@ -171,13 +171,6 @@
     align-items: center;
 }
 
-.ww-extended-contact img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
- }
-
 .ww-extended-contact:before {
     content: '';
     position: absolute;
@@ -193,6 +186,19 @@
     background: var(--primary-bg);
 }
 
+.ww-extended-contact img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+
+.ww-extended-contact-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    
 .ww-extended-contact p {
     margin: 0;
     text-decoration: none;
