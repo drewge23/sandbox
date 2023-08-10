@@ -171,6 +171,13 @@
     align-items: center;
 }
 
+.ww-extended-contact img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+
 .ww-extended-contact:before {
     content: '';
     position: absolute;
