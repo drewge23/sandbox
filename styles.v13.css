@@ -201,8 +201,7 @@
 
 .ww-extended-contact-text {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 12px;
 }
     
 .ww-extended-contact p {
