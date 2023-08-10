@@ -138,6 +138,7 @@ function tmWidgetInit(widgetConfig) {
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
+        if (!parts) return
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
     const gaClientId = getCookie('_ga').split('.')[2] + '.' + getCookie('_ga').split('.')[3];
