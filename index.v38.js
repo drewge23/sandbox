@@ -276,6 +276,7 @@ function getExtendedHtmlString(whatsappLinks, config) {
                     ${config.contacts.map((contact, index) => (
                         `<a target='_blank' href="${whatsappLinks[index]}">
                         <div class='ww-extended-contact'>
+                            <div class='ww-extended-contact-left'>
                                 ${contact.image && `<img src="${contact.image}" alt="" />`}
                                 <div class='ww-extended-contact-text'>
                                     <p class='ww-extended-contact-name'>
@@ -285,6 +286,7 @@ function getExtendedHtmlString(whatsappLinks, config) {
                                         ${contact.title}
                                     </p>`}
                                 </div>    
+                            </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" view-box="0 0 29 29"
                                      fill="none">
