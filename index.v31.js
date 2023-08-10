@@ -134,39 +134,44 @@ function insertStyles() {
     headId.appendChild(link);
 }
 
-function tmWidgetInit(widgetConfig) {
-    function getCookie(regex) {
+function getGaCookies() {
+     function getCookie(regex) {
       const cookies = document.cookie.split(";");
-
       for (const cookie of cookies) {
         const [name, value] = cookie.trim().split("=");
         if (regex.test(name)) {
           return value;
         }
       }
-
       return undefined; 
     }
 
-    const gaCookieRegex = /ga=/;
-    const gaSessionCookieRegex = /_ga_[A-Z\d]{10}=/;
+    const gaCookieRegex = /_ga$/;
+    const gaSessionCookieRegex = /_ga_[A-Z0-9]{10}$/;
     
-    const gaClientId = getCookie(gaCookieRegex);
-    const gaSessionId = getCookie(gaSessionCookieRegex);
+    const wwGaClientInfo = getCookie(gaCookieRegex);
+    const wwGaClientId = wwGaClientInfo ? wwGaClientInfo.split('.')[2] + '.' + wwGaClientInfo.split('.')[3] : undefined
+    const wwGaSessionInfo = getCookie(gaSessionCookieRegex);
+    const wwGaSessionId = wwGaSessionInfo ? wwGaSessionInfo.split('.')[2] : undefined
+    const wwUnixTimestampMillis = new Date().getTime();
 
-    console.log("GA Client ID:", gaClientId);
-    console.log("GA Session ID:", gaSessionId);
-    
-    const unixTimestampMillis = new Date().getTime();
+    const wwUrlParams = new URLSearchParams(window.location.search);
+    const wwGclid = urlParams.get('gclid');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const gclid = urlParams.get('gclid');
+    // console.log('Gclid:', wwGclid);
+    // console.log('GA Client ID:', wwGaClientId);
+    // console.log('GA Session ID:', wwGaSessionId);
+    // console.log('Unix Timestamp (ms):', wwUnixTimestampMillis);
 
-    console.log('Gclid:', gclid);
-    console.log('GA Client ID:', gaClientId);
-    console.log('GA Session ID:', gaSessionId);
-    console.log('Unix Timestamp (ms):', unixTimestampMillis);
-    
+    return {wwGclid, wwGaClientId, wwGaSessionId, wwUnixTimestampMillis}
+}
+
+function tmWidgetInit(widgetConfig) {
+    let gaCookies = getGaCookies()
+        
+        //TODO: do something with the cookie info
+        //TODO: change the 'text' field of the widgetConfig if needed
+        
     let widgetElement = renderWidget(widgetConfig);
 
     initAmplitude(widgetConfig);
