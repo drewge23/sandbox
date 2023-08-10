@@ -135,37 +135,27 @@ function insertStyles() {
 }
 
 function tmWidgetInit(widgetConfig) {
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    const gaClientId = getCookie('_ga').split('.')[2] + '.' + getCookie('_ga').split('.')[3];
+    const gaSessionId = getCookie('_ga').split('.')[3];
+    const unixTimestampMillis = new Date().getTime();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const gclid = urlParams.get('gclid');
+
+    console.log('Gclid:', gclid);
+    console.log('GA Client ID:', gaClientId);
+    console.log('GA Session ID:', gaSessionId);
+    console.log('Unix Timestamp (ms):', unixTimestampMillis);
+    
     let widgetElement = renderWidget(widgetConfig);
 
     initAmplitude(widgetConfig);
     insertStyles();
-    
-    // if (widgetConfig.type === "ww-extended") {
-
-    //     widgetElement.querySelector('.ww-icon').onmouseover = function () {
-    //         widgetElement.classList.add('widget-hovered')
-    //     }
-    //     widgetElement.querySelector('.ww-chat').onmouseover = function () {
-    //         widgetElement.classList.add('widget-chat-hovered')
-    //     }
-    //     widgetElement.querySelector('.ww-chat').onmouseleave = function () {
-    //         widgetElement.classList.remove('widget-chat-hovered')
-    //     }
-    //     widgetElement.onmouseleave = function () {
-    //         setTimeout(() => {
-    //             if (!widgetElement.classList.contains('widget-chat-hovered')) {
-    //                 widgetElement.classList.remove('widget-hovered')
-    //             }
-    //         }, 300);
-    //     }
-    //     widgetElement.querySelector('.ww-icon').onclick = function () {
-    //         widgetElement.classList.add('widget-clicked')
-    //     }
-    //     widgetElement.querySelector('.ww-close').onclick = function () {
-    //         widgetElement.classList.remove('widget-clicked')
-    //         widgetElement.classList.remove('widget-hovered')
-    //     }
-    // }
 }
 
 function readCookie(name) {
