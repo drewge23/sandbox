@@ -137,12 +137,17 @@ function insertStyles() {
 function tmWidgetInit(widgetConfig) {
     function getCookie(name) {
         const value = `; ${document.cookie}`;
+        if (!value.includes(name)) return undefined
         const parts = value.split(`; ${name}=`);
-        if (!parts) return
+        if (!parts) return undefined
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
-    const gaClientId = getCookie('_ga').split('.')[2] + '.' + getCookie('_ga').split('.')[3];
-    const gaSessionId = getCookie('_ga').split('.')[3];
+    const gaClientId = getCookie('_ga')?.split('.')[2] + '.' + getCookie('_ga').split('.')[3];
+    
+    const regex = /_ga_([A-Z0-9]{10})=/; 
+    const match = cookieString.match(regex);
+    
+    const gaSessionId = getCookie(regex)?.split('.')[3];
     const unixTimestampMillis = new Date().getTime();
 
     const urlParams = new URLSearchParams(window.location.search);
