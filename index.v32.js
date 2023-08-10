@@ -156,7 +156,7 @@ function getGaCookies() {
     const wwUnixTimestampMillis = new Date().getTime();
 
     const wwUrlParams = new URLSearchParams(window.location.search);
-    const wwGclid = urlParams.get('gclid');
+    const wwGclid = wwUrlParams.get('gclid');
 
     // console.log('Gclid:', wwGclid);
     // console.log('GA Client ID:', wwGaClientId);
