@@ -129,7 +129,7 @@ function insertStyles() {
     link.type = "text/css";
     link.rel = "stylesheet";
     // link.href = "https://d3kzab8jj16n2f.cloudfront.net/v3/widget-style.css";
-    link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.v11.css";
+    link.href = "https://cdn.jsdelivr.net/gh/drewge23/sandbox@main/styles.v12.css";
     // link.href = "https://raw.githubusercontent.com/drewge23/sandbox/main/styles.css";
     headId.appendChild(link);
 }
@@ -278,12 +278,14 @@ function getExtendedHtmlString(whatsappLinks, config) {
                         <div class='ww-extended-contact'>
                             <div>
                                 ${contact.image && `<img src="${contact.image}" alt="" />`}
-                                <p class='ww-extended-contact-name'>
-                                    ${contact.name ? contact.name : contact.title}
-                                </p>
-                                ${contact.name && `<p class='ww-extended-contact-title'>
-                                    ${contact.title}
-                                </p>`}
+                                <div class='ww-extended-contact-text'>
+                                    <p class='ww-extended-contact-name'>
+                                        ${contact.name ? contact.name : contact.title}
+                                    </p>
+                                    ${contact.name && `<p class='ww-extended-contact-title'>
+                                        ${contact.title}
+                                    </p>`}
+                                </div>    
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" view-box="0 0 29 29"
