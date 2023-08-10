@@ -277,7 +277,7 @@ function getExtendedHtmlString(whatsappLinks, config) {
                         `<a target='_blank' href="${whatsappLinks[index]}">
                         <div class='ww-extended-contact'>
                             <div>
-                                ${contact.image && `<img scr="${contact.image}" alt="" />`}
+                                ${contact.image && `<img src="${contact.image}" alt="" />`}
                                 <p class='ww-extended-contact-name'>
                                     ${contact.name ? contact.name : contact.title}
                                 </p>
